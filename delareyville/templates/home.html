@@ -1,0 +1,77 @@
+{% load static %}
+
+<html>
+<head>
+<style>
+body {
+    background-image: url("{% static 'images/P9-Tswaing-local-municipality.jpg' %}");
+    background-size: cover;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(0,0,0,0.7);
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* MAIN CONTENT */
+.container {
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/report/">Report Issue</a>
+    <a href="/about/">About Us</a>
+    <a href="/contact/">Contact Us</a>
+    <a href="/login/">Sign In</a>
+    <a href="/signup/">Sign Up</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+    <h1>Delareyville Service Reporter</h1>
+    <p style="color: white; font-size: 18px;">Login or Sign Up to report service issues</p>
+</div>
+
+</body>
+</html>
