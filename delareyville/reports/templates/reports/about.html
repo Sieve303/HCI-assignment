@@ -3,53 +3,78 @@
 <html>
 <head>
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url("{% static 'images/P9-Tswaing-local-municipality.jpg' %}");
     background-size: cover;
-    margin: 0;
-    font-family: Arial;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
 .navbar {
-    background-color: rgba(0,0,0,0.7);
-    padding: 15px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(20, 20, 40, 0.9) 100%);
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #007BFF;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .navbar a {
     color: white;
-    margin: 10px;
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    border: 1px solid white;
-    border-radius: 5px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 15px;
 }
 
 .navbar a:hover {
-    background-color: white;
-    color: black;
+    background-color: #007BFF;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.navbar a:active {
+    transform: translateY(0);
 }
 
 .container {
     text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
-    max-width: 600px;
+    margin-top: 80px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.97);
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 123, 255, 0.3);
 }
 
 h2 {
     color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 p {
-    color: #555;
-    line-height: 1.6;
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 </style>
 </head>
@@ -58,11 +83,17 @@ p {
 
 <div class="navbar">
     <a href="/">Home</a>
-    <a href="/report/">Report Issue</a>
+    {% if request.session.user %}
+        <a href="/report/">Report Issue</a>
+    {% endif %}
     <a href="/about/">About Us</a>
     <a href="/contact/">Contact Us</a>
-    <a href="/users/login/">Sign In</a>
-    <a href="/users/signup/">Sign Up</a>
+    {% if not request.session.user %}
+        <a href="/users/login/">Sign In</a>
+        <a href="/users/signup/">Sign Up</a>
+    {% else %}
+        <a href="/logout/">Sign Out</a>
+    {% endif %}
 </div>
 
 <div class="container">
