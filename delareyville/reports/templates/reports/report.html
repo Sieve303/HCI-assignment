@@ -135,6 +135,44 @@ button.track-btn:hover {
     box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
 }
 
+.button-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button-row button,
+.button-row a {
+    flex: 1;
+    padding: 12px !important;
+    margin: 0 !important;
+    text-align: center;
+}
+
+.track-report-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.track-report-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+}
+
 /* SUCCESS TOAST */
 .toast {
     display: none;
@@ -174,6 +212,7 @@ button.track-btn:hover {
 <div class="navbar">
     <a href="/">Home</a>
     <a href="/report/">Report Issue</a>
+    <a href="/track-report/">Track Report</a>
     <a href="/about/">About Us</a>
     <a href="/contact/">Contact Us</a>
     <a href="/users/logout/">Sign Out</a>
@@ -197,8 +236,8 @@ button.track-btn:hover {
         <label for="description">Description of Issue:</label>
         <textarea name="description" id="description" rows="6" placeholder="Please describe the issue in detail..." required></textarea>
 
-        <button type="submit">Submit Report</button>
-        <a href="/track-report/" class="track-btn" style="width: 100%; text-align: center; display: inline-block; padding: 10px; color: white; text-decoration: none; border-radius: 4px;">Track Report</a>
+        <button type="submit" style="margin-bottom: 10px;">Submit Report</button>
+        <a href="/track-report/" class="track-report-link">Track Report Status</a>
     </form>
 </div>
 
